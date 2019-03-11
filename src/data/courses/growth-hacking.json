@@ -1,0 +1,41 @@
+{
+  "courseId": "0001",
+  "title": "Growth Hacking",
+  "slug": "growth-hacking",
+  "description": "Growth Hacking. Growth Marketing. Você provavelmente já viu essas palavras em algum lugar. Mas, o que elas realmente significam? Compreenda o conceito Você escolhe os dias que deseja estudar e o funcionamento da estratégia de Growth Hacking. Descubra o que as grandes empresas do mundo todo tem feito para crescer de forma acelerada. Aprenda o que é ser um Growth Hacker e desenvolva habilidades para elaborar um planejamento estratégico dinâmico e pautado em Product Market Fit.\nNo curso, você conhecerá os hacks (estratégias) mais adequados para alavancar resultados. Seja na performance de suas campanhas de marketing (inbound e outbound marketing), aquisição e retenção de clientes, gestão de times, branding ou outros cenários. Além da prática, vamos trabalhar também com a análise de resultados de cada tática de crescimento e a percepção de seus potenciais clientes sobre o seu produto.",
+  "market": "É comum vermos outros profissionais que desenvolvem um trabalho parecido com o de Growth Hacker. Mesmo que o cargo tenha outro nome. No entanto, tanto o termo quanto a profissão estão começando a ganhar o mercado. Numa rápida busca no LinkedIn é possível encontrar diversas oportunidades. Principalmente em transição de Start-up para Scale-up. Contudo, é comum ver empresas tradicionais atrás destes profissionais para oxigenar e inovar suas relações com o mercado.",
+  "salary": "Os salários de um Growth Hacker variam de R$3.000,00 até R$6.000,00 para cargos de analistas (desde júnior até sênior) e de R$7.500,00 até R$12.000,00 para cargos de gestão (supervisão até gerentes sênior).",
+  "price": {
+    "original": "39,90",
+    "promotional": "19,90",
+    "currency": "R$"
+  },
+  "author": {
+    "name": "Juliano Marques",
+    "bio": "Especializado em Análise Preditiva para Negócios (Stanford Business School), Empreendedorismo (Y Combinator Startup School) e Growth Hacking (Growth Tribe Amsterdã). Juliano tem quase 15 anos de experiência em marketing. É um empreendedor nato, sendo fundador das startups Yurah e Kolab.\nJuliano também atua como Growth Hacker Advisor em startups e empresas de diversos segmentos. Desde 2012 dedica-se à área acadêmica, sendo professor da FIAP e Juiz/Mentor do Startup Weekend for Education."
+  },
+  "topics": [
+    "O que é Growth Hacking através de estudos de caso",
+    "Quando e como aplicar Growth Hacking? - O tal do Must Have",
+    "Pré-requisitos para iniciar uma operação de Growth",
+    "Criação de Personas",
+    "Análise da Jornada do Consumidor",
+    "Value Propositon Canvas e o valor do seu produto",
+    "Business Canvas",
+    "Funil Pirata",
+    "OMTM e North Star",
+    "Sprint de Growth",
+    "Juntando hipóteses",
+    "Execução e análise de dados",
+    "Barreiras para o implementar o mindset de Growth Hacking"
+  ],
+  "video": {
+    "id": "k3XxYwWohmI"
+  },
+  "metadata": {
+    "title": "Curso de Growth Hacking por WhatsApp - Aprenda personalizado pra você | Yurah",
+    "description": "Aprenda Growth Hacking no seu WhatsApp. Nesse curso, você aprenderá as melhores técnicas de Growth Hacking. Tudo isso direto no seu WhatsApp",
+    "keywords": ["curso", "whatsapp", "growth hacking", "growth", "juliano marques", "ead", "aprender", "ensino", "curso por whatsapp"],
+    "url": "https://yurah.com.br/cursos/whatsapp/growth-hacking"
+  }
+}

@@ -1,0 +1,82 @@
+@import './_main';
+
+.description {
+  @include column;
+  @include content;
+
+  margin-top: 21px;
+  color: #fff;
+
+  h1 {
+    @include title;
+
+    span {
+      display: block;
+      color: #fff;
+      font-weight: 700;
+      font-size: .3em;
+      line-height: 1.5em;
+    }
+  }
+
+  .author {
+    font-size: 1em;
+    margin-bottom: 55px;
+    display: block;
+
+    a {
+      color: $yellow;
+      text-decoration: none;
+      transition: .4s color ease-out;
+      will-change: color;
+
+      &:hover {
+        color: $yellow-light;
+      }
+    }
+  }
+
+  p {
+    @include paragraph;
+  }
+
+  h2 {
+    color: $yellow;
+    font-size: 1.2em;
+    margin-top: 55px;
+    display: block;
+  }
+
+  ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    -webkit-column-gap: 80px;
+    -moz-column-gap: 80px;
+    column-gap: 80px;
+    list-style: none;
+
+    @media (max-width: 590px) {
+      columns: 1;
+      -webkit-columns: 1;
+      -moz-columns: 1;
+      -webkit-column-gap: 0;
+      -moz-column-gap: 0;
+      column-gap: 0;
+    }
+
+    li {
+      font-size: .8em;
+      line-height: 1.6em;
+
+      &::before {
+        content: "\2022";
+        color: $yellow;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+        font-weight: 700;
+      }
+    }
+  }
+}

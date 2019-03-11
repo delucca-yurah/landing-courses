@@ -1,0 +1,56 @@
+@import './_main';
+
+.header {
+  position: fixed;
+  margin: 0;
+  top: 0;
+  width: 100%;
+  background: $purple-with-transparency;
+  z-index: 9;
+}
+
+.headerWrapper {
+  margin: 0 auto;
+  width: 960px;
+  padding: .5rem 1.0875rem;
+  display: flex;
+  align-content: center;
+
+  @media (max-width: 960px) {
+    width: 90%;
+  }
+}
+
+.mobileToggler {
+  display: inherit;
+  align-items: center;
+  font-size: 1.8em;
+  color: $yellow;
+  position: relative;
+  top: -3px;
+  display: none;
+
+  @media (max-width: 590px) {
+    display: inherit;
+  }
+
+  .mobileClose {
+    z-index: 10;
+
+    @media (max-width: 590px) {
+      display: none;
+    }
+  }
+
+  .activeMobile {
+    @media (max-width: 590px) {
+      display: inherit;
+    }
+  }
+
+  .inactiveMobile {
+    @media (max-width: 590px) {
+      display: none;
+    }
+  }
+}

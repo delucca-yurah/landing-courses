@@ -1,0 +1,51 @@
+@import './main';
+
+.how {
+  padding-top: 55px;
+  color: #fff;
+  background-color: $yellow-with-transparency;
+  border-bottom: 21px solid $purple;
+
+  .howContent {
+    @include column;
+    @include content;
+
+    h2 {
+      @include title;
+
+      color: $purple;
+    }
+
+    ul {
+      margin-top: 55px;
+
+      li {
+        list-style: none;
+        padding: 13px 0 13px 80px;
+        width: 560px;
+
+        @media (max-width: 960px) {
+          padding: 13px 0 13px 80px;
+          width: calc(100vw - 80px);
+        }
+
+        img {
+          position: absolute;
+          transform: rotate(-20deg);
+          margin-top: 30px;
+          margin-left: -100px;
+        }
+
+        h3 {
+          color: $purple;
+          font-size: 1em;
+          margin-bottom: 8px;
+        }
+
+        p {
+          @include paragraph;
+        }
+      }
+    }
+  }
+}

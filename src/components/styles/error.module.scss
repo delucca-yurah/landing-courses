@@ -1,0 +1,50 @@
+@import './main';
+
+.error {
+  @include column;
+  @include content;
+
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  div {
+    display: block;
+
+    .emojis {
+      width: 100%;
+      text-align: center;
+      display: block;
+      font-size: 2.4em;
+      line-height: 2em;
+    }
+
+    p {
+      @include paragraph;
+
+      width: 420px;
+      text-align: center;
+      margin-top: 34px;
+      line-height: 2.5em;
+
+      @media (max-width: 420px) {
+        width: 100%;
+      }
+    }
+
+    a {
+      color: $yellow;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .4s color ease-out;
+      will-change: color;
+
+      &:hover {
+        color: $yellow-light
+      }
+    }
+  }
+}

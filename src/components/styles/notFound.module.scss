@@ -1,0 +1,38 @@
+@import './main';
+
+.notFound {
+  @include column;
+  @include content;
+
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  div {
+    display: block;
+
+    .emojis {
+      width: 100%;
+      text-align: center;
+      display: block;
+      font-size: 2.4em;
+      line-height: 2em;
+    }
+
+    p {
+      @include paragraph;
+
+      width: 440px;
+      text-align: center;
+      margin-top: 34px;
+      line-height: 2.5em;
+
+      @media (max-width: 440px) {
+        width: 100%;
+      }
+    }
+  }
+}

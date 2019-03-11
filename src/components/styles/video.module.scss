@@ -1,0 +1,22 @@
+@import './_main';
+
+.video {
+  @include column;
+  margin-top: 66px;
+
+  iframe {
+    @media (max-width: 960px) {
+      width: 100%;
+      height: calc((100vw * 9 / 16) - 8px);
+    }
+  }
+}
+
+.videoBg {
+  background-color: rgba(0,0,0, .1);
+  max-height: 360px;
+
+  @media (max-width: 960px) {
+    max-height: calc((100vw * 9 / 16) - 8px);
+  }
+}

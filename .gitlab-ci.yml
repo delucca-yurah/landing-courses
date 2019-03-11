@@ -1,0 +1,69 @@
+image: docker
+stages:
+  - build
+  - deploy
+
+build:
+  image: docker:git
+  stage: build
+  variables:
+    DOCKER_DRIVER: overlay2
+  services:
+    - docker:dind
+  script:
+    - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_REGISTRY_DOMAIN
+    - |
+      if [[ "${CI_BUILD_REF_NAME}" == master ]]; \
+        then export GATSBY_HOME="https://yurah.com.br"; \
+        else export GATSBY_HOME="https://staging.yurah.com.br"; \
+      fi
+    - |
+      if [[ "${CI_BUILD_REF_NAME}" == master ]]; \
+        then export GATSBY_PAGARME_ENCRYPTION_KEY="ek_test_Y5LzT8rpLaKz8qFns11jG9YwGKpwRp"; \
+        else export GATSBY_PAGARME_ENCRYPTION_KEY="ek_test_Y5LzT8rpLaKz8qFns11jG9YwGKpwRp"; \
+      fi
+    - |
+      if [[ "${CI_BUILD_REF_NAME}" == master ]]; \
+        then export GATSBY_PAGARME_POSTBACK_URL="https://api.yurah.com.br/students/prime/webhook"; \
+        else export GATSBY_PAGARME_POSTBACK_URL="https://staging.api.yurah.com.br/students/prime/webhook"; \
+      fi
+    - |
+      docker build \
+        -t $DOCKER_REGISTRY_DOMAIN/web-landings-courses \
+        -t $DOCKER_REGISTRY_DOMAIN/web-landings-courses:$CI_PIPELINE_ID \
+        --build-arg GATSBY_HOME=$GATSBY_HOME \
+        --build-arg GATSBY_PAGARME_ENCRYPTION_KEY=$GATSBY_PAGARME_ENCRYPTION_KEY \
+        --build-arg GATSBY_PAGARME_POSTBACK_URL=$GATSBY_PAGARME_POSTBACK_URL \
+        .
+    - docker push $DOCKER_REGISTRY_DOMAIN/web-landings-courses:latest
+    - docker push $DOCKER_REGISTRY_DOMAIN/web-landings-courses:$CI_PIPELINE_ID
+
+deploy:
+  image: identt/rancher-compose
+  stage: deploy
+  script:
+    - sed -i "s/\$version/$CI_PIPELINE_ID/g" docker-compose.yml
+    - |
+      rancher-compose \
+        --url $RANCHER_URL \
+        --access-key $RANCHER_ACCESS_KEY \
+        --secret-key $RANCHER_SECRET_KEY \
+        -p yurah \
+        --file docker-compose.yml \
+        up -u -p -c -d
+  only:
+    - master
+
+deploy-staging:
+  image: identt/rancher-compose
+  stage: deploy
+  script:
+    - sed -i "s/\$version/$CI_PIPELINE_ID/g" docker-compose.yml
+    - |
+      rancher-compose \
+        --url $RANCHER_URL \
+        --access-key $RANCHER_STAGING_ACCESS_KEY \
+        --secret-key $RANCHER_STAGING_SECRET_KEY \
+        -p yurah \
+        --file docker-compose.yml \
+        up -u -p -c -d

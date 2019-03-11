@@ -1,0 +1,14 @@
+@import '../styles/main';
+
+.buy {
+  @include button;
+
+  margin: 0 auto 21px auto;
+}
+
+.loading {
+  width: 34px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 21px;                                                                                                                                                                                                                                                                                                                                                                                                  
+}

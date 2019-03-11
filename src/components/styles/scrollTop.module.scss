@@ -1,0 +1,47 @@
+@import './_main';
+
+.scrollTop {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  background: $purple;
+  padding: 13px;
+  color: #fff;
+  z-index: 13;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: .4s all ease-out;
+  opacity: 0;
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+
+  &.visible {
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 1;
+    background: $purple-light;
+
+    span {
+      opacity: 1;
+    }
+  }
+
+  span {
+    border: 1px solid #fff;
+    color: #fff;
+    display: flex;
+    width: 21px;
+    height: 21px;
+    border-radius: 21px;
+    font-size: .6em;
+    align-items: center;
+    justify-content: center;
+    opacity: .6;
+  }
+}

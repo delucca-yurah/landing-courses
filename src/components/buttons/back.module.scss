@@ -1,0 +1,7 @@
+@import '../styles/main';
+
+.back {
+  @include button;
+
+  margin-top: 35px;
+}
